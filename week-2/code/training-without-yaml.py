@@ -8,6 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 import joblib
 
+print('Libraries imported')
+
 # path to the dataset
 filename = "../data/breast-cancer-wisconsin.data"
 
@@ -44,6 +46,6 @@ result = model.score(X_test, y_test)
 print("Accuracy score is {:.1f} %".format(result*100))
 
 # save our classifier in the model directory
-model_name = "KNN_classifier"
+model_name = "KNN_classifier-final"
 joblib.dump(model, '../model/{}.pkl'.format(model_name))
 print("Model saved as {}.pkl".format(model_name))

@@ -1,0 +1,34 @@
+#INITIAL SETTINGS
+data_source:
+  directory: "../data/"
+  filename: "breast-cancer-wisconsin.data"
+  column_names:
+    [
+      "id",
+      "clump_thickness",
+      "uniform_cell_size",
+      "uniform_cell_shape",
+      "marginal_adhesion",
+      "single_epithelial_size",
+      "bare_nuclei",
+      "bland_chromatin",
+      "normal_nucleoli",
+      "mitoses",
+      "class",
+    ]
+  drop_columns: ["id"]
+  target_name: "class"
+  test_size: 0.2
+  random_state: 42
+
+#kNN parameters
+model:
+  n_neighbors: 5
+  weights: "uniform"
+  algorithm: "auto"
+  leaf_size: 25
+  p: 1
+  metric: "minkowski"
+  n_jobs: -1
+  model_directory: "../models/"
+  model_name: "KNN_model_with_yaml"

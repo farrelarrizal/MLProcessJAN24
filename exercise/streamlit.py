@@ -4,6 +4,7 @@ import pandas as pd
 
 st.title("Hello World")
 
+data = pd.read_csv('../data/breast-cancer-wisconsin.data', header=None)
 
 with st.form(key='user_input'):
     nama = st.text_input('Masukkan Nama', help='Nama harus diisi')

@@ -1,0 +1,15 @@
+FROM python:3.9.9-slim-buster
+
+# set directory
+WORKDIR /home
+
+COPY ./requirements.txt .
+
+RUN pip install -r requirements.txt
+
+# choose port
+EXPOSE 8501
+
+# start the app
+CMD ["streamlit", "run", "src/frontend.py"]
+

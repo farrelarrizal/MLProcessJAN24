@@ -1,0 +1,21 @@
+name: iris-classifier
+services:
+  frontend:
+    build: docker/frontend
+    image: frontend # (iris-classifier/frontend)
+    container_name: streamlit
+    depends_on:
+      - backend
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./:/home/
+
+  backend:
+    build: docker/backend
+    image: backend # (iris-classifier/backend)
+    container_name: fastapi
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/home/

@@ -1,0 +1,13 @@
+FROM python:3.9.9-slim-buster
+
+# set directory
+WORKDIR /home
+
+COPY ./requirements.txt .
+
+RUN pip install -r requirements.txt
+
+# choose port
+EXPOSE 8000
+
+CMD ["python", "src/backend.py"]

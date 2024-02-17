@@ -3,7 +3,7 @@ import time
 import requests
 
 # Header
-st.image('../assets/header-iris.png')
+st.image('assets/header-iris.png')
 st.title('Iris Classifier App')
 st.markdown('Created By: Farrel Arrizal | Batch Period: JAN 24')
 st.divider()
@@ -30,7 +30,7 @@ with st.form(key='iris_form'):
         
         with st.spinner('Predicting...'):
             # do something
-            response = requests.post('http://localhost:8000/predict', json=data)
+            response = requests.post('http://backend:8000/predict', json=data)
             result = response.json()
             
             
